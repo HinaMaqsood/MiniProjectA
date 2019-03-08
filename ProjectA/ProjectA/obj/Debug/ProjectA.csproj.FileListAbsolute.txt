@@ -1,0 +1,10 @@
+D:\6th SEM Labs\DB\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+D:\6th SEM Labs\DB\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+D:\6th SEM Labs\DB\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Form1.resources
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.cache
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.CoreCompileInputs.cache
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
