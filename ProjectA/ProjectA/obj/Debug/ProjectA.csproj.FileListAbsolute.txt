@@ -10,3 +10,17 @@ D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.exe
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Welcome.resources
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\bin\Debug\ProjectA.exe.config
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\bin\Debug\ProjectA.exe
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\bin\Debug\ProjectA.pdb
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Person.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Properties.Resources.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Welcome.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.cache
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.CoreCompileInputs.cache
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.exe
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Advisor.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources

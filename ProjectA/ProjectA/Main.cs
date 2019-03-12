@@ -27,5 +27,16 @@ namespace ProjectA
             Welcome fm2 = new Welcome();
             fm2.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Person fm2 = new Person();
+            fm2.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

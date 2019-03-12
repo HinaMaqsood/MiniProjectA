@@ -11,13 +11,13 @@ using System.Data.SqlClient;
 
 namespace ProjectA
 {
-    public partial class Form1 : Form
+    public partial class Person : Form
     {
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-REMV6L1\SQLEXPRESS;Initial Catalog=ProjectA;Integrated Security=True;");
         SqlCommand command;
         SqlDataAdapter prog;
         int Id = 0;
-        public Form1()
+        public Person()
         {
             InitializeComponent();
         }
@@ -54,19 +54,45 @@ namespace ProjectA
         {
 
         }
+        /*
+        int value;
+        private int GetGenderFromLookup(string gen)
+        {
+            string q;
+            if (gen == "Male")
+                q = "SELECT Id FROM Lookup where Category = 'GENDER' AND Value = 'Male'";
+            else
+                q = "SELECT Id FROM Lookup where Category = 'GENDER' AND Value = 'Female'";
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(q, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    value = int.Parse(reader[0].ToString());
+                }
+            }
+            return value;
+        }
+        */
+        string idQuery = "SELECT SCOPE_IDENTITY() AS LastInsertedSubmissionId";
 
-        
+
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DOBTB.Text != "")
+            if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DOBTB.Text != "" && RegnoTB.Text != "")
             {
-                command = new SqlCommand("insert into Person(FirstName,LastName,Contact,Email,DateOfBirth) values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth)", conn);
-                conn.Open();
+                command = new SqlCommand("insert into Person(FirstName,LastName,Contact,Email,DateOfBirth) values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth,@RegistrationNo)", conn);
+                conn.Open(); 
                 command.Parameters.AddWithValue("@FirstName", FNTB.Text);
                 command.Parameters.AddWithValue("@LastName", LNTB.Text);
                 command.Parameters.AddWithValue("@Contact", ContactNoTB.Text);
                 command.Parameters.AddWithValue("@Email", EmailTB.Text);
                 command.Parameters.AddWithValue("@DateOfBirth", DOBTB.Text);
+              //  string g = gendercombo.Text.ToString();
+              //  int gender = GetGenderFromLookup(g);
+              //  command.Parameters.AddWithValue("@Gender", gender);
                 command.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Data Inserted Successfully");
@@ -79,7 +105,7 @@ namespace ProjectA
                 MessageBox.Show("Please Enter Details!");
             }
         }
-       
+
         private void updatebutton_Click(object sender, EventArgs e)
         {
             if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DOBTB.Text != "")
@@ -138,6 +164,20 @@ namespace ProjectA
                 MessageBox.Show("Please Select Data to Delete");
             }
         }
-       
+
+        private void idTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegnoTB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
