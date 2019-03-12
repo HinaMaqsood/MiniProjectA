@@ -8,3 +8,5 @@ D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.GenerateResource.
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.CoreCompileInputs.cache
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.exe
 D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.pdb
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Welcome.resources
+D:\6th SEM Labs\DB\ProjectA\ProjectA\obj\Debug\ProjectA.Main.resources

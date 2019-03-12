@@ -20,7 +20,6 @@ namespace ProjectA
         public Form1()
         {
             InitializeComponent();
-            DisplayData();
         }
         private void DisplayData()
         {
@@ -139,5 +138,6 @@ namespace ProjectA
                 MessageBox.Show("Please Select Data to Delete");
             }
         }
+       
     }
 }
