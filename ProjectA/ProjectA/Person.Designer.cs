@@ -32,7 +32,6 @@
             this.LNTB = new System.Windows.Forms.TextBox();
             this.ContactNoTB = new System.Windows.Forms.TextBox();
             this.EmailTB = new System.Windows.Forms.TextBox();
-            this.DOBTB = new System.Windows.Forms.TextBox();
             this.FN = new System.Windows.Forms.Label();
             this.LN = new System.Windows.Forms.Label();
             this.CNo = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.RegnoTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DTTB = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             this.FNTB.Name = "FNTB";
             this.FNTB.Size = new System.Drawing.Size(100, 20);
             this.FNTB.TabIndex = 1;
+            this.FNTB.Validating += new System.ComponentModel.CancelEventHandler(this.FNTB_Validating);
             // 
             // LNTB
             // 
@@ -65,6 +66,7 @@
             this.LNTB.Name = "LNTB";
             this.LNTB.Size = new System.Drawing.Size(100, 20);
             this.LNTB.TabIndex = 2;
+            this.LNTB.Validating += new System.ComponentModel.CancelEventHandler(this.LNTB_Validating);
             // 
             // ContactNoTB
             // 
@@ -72,6 +74,8 @@
             this.ContactNoTB.Name = "ContactNoTB";
             this.ContactNoTB.Size = new System.Drawing.Size(100, 20);
             this.ContactNoTB.TabIndex = 3;
+            this.ContactNoTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ContactNoTB_KeyPress);
+            this.ContactNoTB.Validating += new System.ComponentModel.CancelEventHandler(this.ContactNoTB_Validating);
             // 
             // EmailTB
             // 
@@ -79,13 +83,8 @@
             this.EmailTB.Name = "EmailTB";
             this.EmailTB.Size = new System.Drawing.Size(100, 20);
             this.EmailTB.TabIndex = 4;
-            // 
-            // DOBTB
-            // 
-            this.DOBTB.Location = new System.Drawing.Point(153, 304);
-            this.DOBTB.Name = "DOBTB";
-            this.DOBTB.Size = new System.Drawing.Size(100, 20);
-            this.DOBTB.TabIndex = 5;
+            this.EmailTB.TextChanged += new System.EventHandler(this.EmailTB_TextChanged);
+            this.EmailTB.Validating += new System.ComponentModel.CancelEventHandler(this.EmailTB_Validating_1);
             // 
             // FN
             // 
@@ -168,10 +167,13 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(3, 19);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(165, 57);
             this.label1.TabIndex = 15;
@@ -233,6 +235,7 @@
             this.RegnoTB.Size = new System.Drawing.Size(100, 20);
             this.RegnoTB.TabIndex = 21;
             this.RegnoTB.TextChanged += new System.EventHandler(this.RegnoTB_TextChanged);
+            this.RegnoTB.Validating += new System.ComponentModel.CancelEventHandler(this.RegnoTB_Validating);
             // 
             // label2
             // 
@@ -257,12 +260,20 @@
             this.panel1.Size = new System.Drawing.Size(1066, 100);
             this.panel1.TabIndex = 23;
             // 
+            // DTTB
+            // 
+            this.DTTB.Location = new System.Drawing.Point(153, 303);
+            this.DTTB.Name = "DTTB";
+            this.DTTB.Size = new System.Drawing.Size(100, 20);
+            this.DTTB.TabIndex = 24;
+            // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(1066, 450);
+            this.Controls.Add(this.DTTB);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.RegnoTB);
@@ -277,7 +288,6 @@
             this.Controls.Add(this.CNo);
             this.Controls.Add(this.LN);
             this.Controls.Add(this.FN);
-            this.Controls.Add(this.DOBTB);
             this.Controls.Add(this.EmailTB);
             this.Controls.Add(this.ContactNoTB);
             this.Controls.Add(this.LNTB);
@@ -298,7 +308,6 @@
         private System.Windows.Forms.TextBox LNTB;
         private System.Windows.Forms.TextBox ContactNoTB;
         private System.Windows.Forms.TextBox EmailTB;
-        private System.Windows.Forms.TextBox DOBTB;
         private System.Windows.Forms.Label FN;
         private System.Windows.Forms.Label LN;
         private System.Windows.Forms.Label CNo;
@@ -314,6 +323,7 @@
         private System.Windows.Forms.TextBox RegnoTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker DTTB;
     }
 }
 
