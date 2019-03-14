@@ -26,6 +26,7 @@ namespace ProjectA
         {
             Welcome fm2 = new Welcome();
             fm2.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,7 +37,20 @@ namespace ProjectA
 
         private void button7_Click(object sender, EventArgs e)
         {
+            Project fm2 = new Project();
+            fm2.Show();
+        }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Advisor fm2 = new Advisor();
+            fm2.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Evaluation fm2 = new Evaluation();
+            fm2.Show();
         }
     }
 }

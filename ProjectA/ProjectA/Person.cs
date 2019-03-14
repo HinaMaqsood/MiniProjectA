@@ -16,22 +16,22 @@ namespace ProjectA
     {
         SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-REMV6L1\SQLEXPRESS;Initial Catalog=ProjectA;MultipleActiveResultSets=true;Integrated Security=True;");
         SqlCommand command;
-        SqlDataAdapter prog;
+        SqlDataAdapter Adopt;
         int Id = 0;
         public Person()
         {
             InitializeComponent();
         }
-        private void DisplayData()
+        private void DataShow()
         {
-            conn.Open();
-            DataTable dt = new DataTable();
-            prog = new SqlDataAdapter("select * from Person", conn);
-            prog.Fill(dt);
-            dataGridView1.DataSource = dt;
+           
+            DataTable all = new DataTable();
+            Adopt = new SqlDataAdapter("select Person.Id, RegistrationNo, FirstName, LastName,  Contact, Email, DateOfBirth, Gender from Person JOIN Student ON Person.Id = Student.Id", conn);
+            Adopt.Fill(all);
+            dataGridView1.DataSource = all;
             conn.Close();
         }
-        private void ClearData()
+        private void DataClean()
         {
             FNTB.Text = "";
             LNTB.Text = "";
@@ -53,11 +53,11 @@ namespace ProjectA
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            DataShow();
         }
 
         int value;
-        private int GetGenderFromLookup(string gen)
+        private int LookupGen(string gen)
         {
             
             string q;
@@ -80,9 +80,9 @@ namespace ProjectA
 
         
      //   string idQuery = "SELECT SCOPE_IDENTITY() AS LastInsertedSubmissionId";
-        private int RetriveID()
+        private int IDGET()
         {
-            int value = 0;
+            int getID = 0;
             
                 string query = "Select Id from Person where (Id = SCOPE_IDENTITY());";
                 if(conn.State==ConnectionState.Closed)
@@ -90,71 +90,62 @@ namespace ProjectA
                     conn.Open();
                 }
                 SqlCommand command = new SqlCommand(query, conn);
-                var val = command.ExecuteScalar().ToString();
-                value = int.Parse(val);
-                return value;
+                var i = command.ExecuteScalar().ToString();
+                getID = int.Parse(i);
+                return getID;
         }
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "" && RegnoTB.Text != "")
+            conn.Open();
+            string gen = gendercombo.SelectedItem.ToString();
+            string genGet = "select Id FROM Lookup WHERE Category = 'Gender' AND value ='" + gen + "'";
+            SqlCommand ConvertToInt = new SqlCommand(genGet, conn);
+            int GetGender = 0;
+            SqlDataReader readgen = ConvertToInt.ExecuteReader();
+            while (readgen.Read())
             {
-                command = new SqlCommand("insert into Person(FirstName,LastName,Contact,Email,DateOfBirth) values(@FirstName,@LastName,@Contact,@Email,@DateOfBirth)", conn);
-                conn.Open(); 
-                command.Parameters.AddWithValue("@FirstName", FNTB.Text);
-                command.Parameters.AddWithValue("@LastName", LNTB.Text);
-                command.Parameters.AddWithValue("@Contact", ContactNoTB.Text);
-                command.Parameters.AddWithValue("@Email", EmailTB.Text);
-                command.Parameters.AddWithValue("@DateOfBirth", DateTime.Parse(DTTB.Text));
-                string g = gendercombo.Text.ToString();
-                int gender = GetGenderFromLookup(g);
-                command.Parameters.AddWithValue("@Gender", gender);
-              //  int value1 = 0;
-              //  string query = "Select Id from Person where (Id = SCOPE_IDENTITY())";
-              //  var val = command.ExecuteScalar().ToString();
-              //  value1 = int.Parse(val);
-                int i = command.ExecuteNonQuery();
-                int id = RetriveID();
-                SqlCommand command2 = new SqlCommand("insert into Student(Id,RegistrationNo) values(@id, @RegistrationNo)", conn);
-                int j = command2.ExecuteNonQuery();
-                if (i >=1 && j >=1)
-                {
-                    MessageBox.Show(i + " student Registered:" + FNTB + LNTB);
-                }
-                else
-                {
-                    MessageBox.Show(i + " Student not Registered:" + FNTB + LNTB);
-                }
+                GetGender = int.Parse(readgen[0].ToString());
+            }
 
-                conn.Close();
-                MessageBox.Show("Data Inserted Successfully");
-                DisplayData();
-                ClearData();
-               
+            string insertall = "INSERT into Person(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + GetGender + "')";
+
+            SqlCommand i = new SqlCommand(insertall, conn);
+            int an = i.ExecuteNonQuery();
+            int total = 0;
+            string scope = "Select Id from Person where (Id = SCOPE_IDENTITY())";
+            SqlCommand command = new SqlCommand(scope, conn);
+            var dig = command.ExecuteScalar().ToString();
+            total = int.Parse(dig);
+            string q = "insert into Student values('" + total + "','" + RegnoTB.Text.ToString() + "')";
+            SqlCommand cmd1 = new SqlCommand(q, conn);
+            int sel = cmd1.ExecuteNonQuery();
+            if (MessageBox.Show("Do You want to Register this Student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                MessageBox.Show("Student is Registered");
             }
             else
             {
-                MessageBox.Show("Please Enter Details!");
+                MessageBox.Show("Student is not Registered", "Register Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            DataShow();
+            conn.Close(); 
+
+           
         }
 
         private void updatebutton_Click(object sender, EventArgs e)
         {
             if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "")
             {
-                command = new SqlCommand("update Person set FirstName=@FN,LastName=@LN, Contact=@Cont, Email=@EM, DateOfBirth=@DOB where Id=@id", conn);
+                string per = "UPDATE Person set(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + value + "') where Id = Id";
                 conn.Open();
-                command.Parameters.AddWithValue("@id", Id);
-                command.Parameters.AddWithValue("@FN", FNTB.Text);
-                command.Parameters.AddWithValue("@LN", LNTB.Text);
-                command.Parameters.AddWithValue("@Cont", ContactNoTB.Text);
-                command.Parameters.AddWithValue("@EM", EmailTB.Text);
-                command.Parameters.AddWithValue("@DOB", DTTB.Text);
-                command.ExecuteNonQuery();
+                SqlCommand persi = new SqlCommand(per, conn);
+                int ii = persi.ExecuteNonQuery();
                 MessageBox.Show("Data Updated Successfully");
                 conn.Close();
-                DisplayData();
-                ClearData();
+                DataShow();
+                DataClean();
             }
             else
             {
@@ -189,8 +180,8 @@ namespace ProjectA
                 command.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Data Deleted Successfully!");
-                DisplayData();
-                ClearData();
+                DataShow();
+                DataClean();
             }
             else
             {
@@ -217,8 +208,6 @@ namespace ProjectA
         {
             
         }
-
-
 
         private void EmailTB_Validating_1(object sender, CancelEventArgs e)
         {
@@ -250,7 +239,7 @@ namespace ProjectA
         {
             if (!(Regex.IsMatch(ContactNoTB.Text, "^[0-9]{10,12}$")))
             {
-                MessageBox.Show("Enter valid no");
+                MessageBox.Show("Enter valid number");
                 ContactNoTB.SelectAll();
                 e.Cancel = true;
             }
@@ -261,7 +250,7 @@ namespace ProjectA
         {
             if (!Regex.IsMatch(FNTB.Text, @"[A-Z][a-zA-Z\s\'-]*"))
             {
-                MessageBox.Show("Use only alphabets or enter first letter capital");
+                MessageBox.Show("Use only alphabets or Enter first letter capital");
                 FNTB.SelectAll();
                 e.Cancel = true;
             }
@@ -271,7 +260,7 @@ namespace ProjectA
         {
             if (!Regex.IsMatch(LNTB.Text, @"[A-Z][a-zA-Z\s\'-]*"))
             {
-                MessageBox.Show("Use only alphabets or enter first letter capital");
+                MessageBox.Show("Use only alphabets or Enter first letter capital");
                 LNTB.SelectAll();
                 e.Cancel = true;
             }

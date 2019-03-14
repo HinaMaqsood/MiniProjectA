@@ -24,3 +24,4 @@ C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\Proj
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Advisor.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Evaluation.resources

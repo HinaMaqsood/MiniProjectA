@@ -35,18 +35,23 @@
             this.CNo = new System.Windows.Forms.Label();
             this.LN = new System.Windows.Forms.Label();
             this.FN = new System.Windows.Forms.Label();
-            this.DOBTB = new System.Windows.Forms.TextBox();
             this.EmailTB = new System.Windows.Forms.TextBox();
             this.ContactNoTB = new System.Windows.Forms.TextBox();
             this.LNTB = new System.Windows.Forms.TextBox();
             this.FNTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.salaTB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.deletebutton = new System.Windows.Forms.Button();
+            this.updatebutton = new System.Windows.Forms.Button();
+            this.createbutton = new System.Windows.Forms.Button();
+            this.desigcombo = new System.Windows.Forms.ComboBox();
+            this.DOBTB = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gendercombo
@@ -126,19 +131,13 @@
             this.FN.TabIndex = 20;
             this.FN.Text = "First Name";
             // 
-            // DOBTB
-            // 
-            this.DOBTB.Location = new System.Drawing.Point(125, 304);
-            this.DOBTB.Name = "DOBTB";
-            this.DOBTB.Size = new System.Drawing.Size(100, 20);
-            this.DOBTB.TabIndex = 19;
-            // 
             // EmailTB
             // 
             this.EmailTB.Location = new System.Drawing.Point(125, 278);
             this.EmailTB.Name = "EmailTB";
             this.EmailTB.Size = new System.Drawing.Size(100, 20);
             this.EmailTB.TabIndex = 18;
+            this.EmailTB.Validating += new System.ComponentModel.CancelEventHandler(this.EmailTB_Validating);
             // 
             // ContactNoTB
             // 
@@ -146,6 +145,7 @@
             this.ContactNoTB.Name = "ContactNoTB";
             this.ContactNoTB.Size = new System.Drawing.Size(100, 20);
             this.ContactNoTB.TabIndex = 17;
+            this.ContactNoTB.Validating += new System.ComponentModel.CancelEventHandler(this.ContactNoTB_Validating);
             // 
             // LNTB
             // 
@@ -153,6 +153,7 @@
             this.LNTB.Name = "LNTB";
             this.LNTB.Size = new System.Drawing.Size(100, 20);
             this.LNTB.TabIndex = 16;
+            this.LNTB.Validating += new System.ComponentModel.CancelEventHandler(this.LNTB_Validating);
             // 
             // FNTB
             // 
@@ -160,6 +161,8 @@
             this.FNTB.Name = "FNTB";
             this.FNTB.Size = new System.Drawing.Size(100, 20);
             this.FNTB.TabIndex = 15;
+            this.FNTB.TextChanged += new System.EventHandler(this.FNTB_TextChanged);
+            this.FNTB.Validating += new System.ComponentModel.CancelEventHandler(this.FNTB_Validating);
             // 
             // label1
             // 
@@ -184,19 +187,12 @@
             this.label2.Text = "Salary";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
+            // salaTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 200);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 29;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(125, 226);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 30;
+            this.salaTB.Location = new System.Drawing.Point(125, 226);
+            this.salaTB.Name = "salaTB";
+            this.salaTB.Size = new System.Drawing.Size(100, 20);
+            this.salaTB.TabIndex = 30;
             // 
             // panel1
             // 
@@ -219,15 +215,90 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Advisor";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(352, 148);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(545, 203);
+            this.dataGridView1.TabIndex = 33;
+            // 
+            // deletebutton
+            // 
+            this.deletebutton.BackColor = System.Drawing.Color.DarkCyan;
+            this.deletebutton.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletebutton.ForeColor = System.Drawing.Color.Maroon;
+            this.deletebutton.Location = new System.Drawing.Point(708, 381);
+            this.deletebutton.Name = "deletebutton";
+            this.deletebutton.Size = new System.Drawing.Size(75, 35);
+            this.deletebutton.TabIndex = 39;
+            this.deletebutton.Text = "Delete";
+            this.deletebutton.UseVisualStyleBackColor = false;
+            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
+            // 
+            // updatebutton
+            // 
+            this.updatebutton.BackColor = System.Drawing.Color.DarkCyan;
+            this.updatebutton.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatebutton.ForeColor = System.Drawing.Color.Maroon;
+            this.updatebutton.Location = new System.Drawing.Point(573, 381);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(75, 35);
+            this.updatebutton.TabIndex = 38;
+            this.updatebutton.Text = "Update";
+            this.updatebutton.UseVisualStyleBackColor = false;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
+            // 
+            // createbutton
+            // 
+            this.createbutton.BackColor = System.Drawing.Color.DarkCyan;
+            this.createbutton.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createbutton.ForeColor = System.Drawing.Color.Maroon;
+            this.createbutton.Location = new System.Drawing.Point(440, 381);
+            this.createbutton.Name = "createbutton";
+            this.createbutton.Size = new System.Drawing.Size(75, 35);
+            this.createbutton.TabIndex = 37;
+            this.createbutton.Text = "Create";
+            this.createbutton.UseVisualStyleBackColor = false;
+            this.createbutton.Click += new System.EventHandler(this.createbutton_Click);
+            // 
+            // desigcombo
+            // 
+            this.desigcombo.FormattingEnabled = true;
+            this.desigcombo.Items.AddRange(new object[] {
+            "Professor",
+            "Associate Professor",
+            "Assisstant Professor",
+            "Lecturer",
+            "Industry Professional"});
+            this.desigcombo.Location = new System.Drawing.Point(125, 199);
+            this.desigcombo.Name = "desigcombo";
+            this.desigcombo.Size = new System.Drawing.Size(100, 21);
+            this.desigcombo.TabIndex = 40;
+            this.desigcombo.StyleChanged += new System.EventHandler(this.desigcombo_StyleChanged);
+            this.desigcombo.Validated += new System.EventHandler(this.desigcombo_Validated);
+            // 
+            // DOBTB
+            // 
+            this.DOBTB.Location = new System.Drawing.Point(125, 305);
+            this.DOBTB.Name = "DOBTB";
+            this.DOBTB.Size = new System.Drawing.Size(100, 20);
+            this.DOBTB.TabIndex = 41;
+            // 
             // Advisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(931, 450);
+            this.Controls.Add(this.DOBTB);
+            this.Controls.Add(this.desigcombo);
+            this.Controls.Add(this.deletebutton);
+            this.Controls.Add(this.updatebutton);
+            this.Controls.Add(this.createbutton);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.salaTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gendercombo);
@@ -237,15 +308,17 @@
             this.Controls.Add(this.CNo);
             this.Controls.Add(this.LN);
             this.Controls.Add(this.FN);
-            this.Controls.Add(this.DOBTB);
             this.Controls.Add(this.EmailTB);
             this.Controls.Add(this.ContactNoTB);
             this.Controls.Add(this.LNTB);
             this.Controls.Add(this.FNTB);
             this.Name = "Advisor";
             this.Text = "Advisor";
+            this.Load += new System.EventHandler(this.Advisor_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Advisor_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,16 +333,20 @@
         private System.Windows.Forms.Label CNo;
         private System.Windows.Forms.Label LN;
         private System.Windows.Forms.Label FN;
-        private System.Windows.Forms.TextBox DOBTB;
         private System.Windows.Forms.TextBox EmailTB;
         private System.Windows.Forms.TextBox ContactNoTB;
         private System.Windows.Forms.TextBox LNTB;
         private System.Windows.Forms.TextBox FNTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox salaTB;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button deletebutton;
+        private System.Windows.Forms.Button updatebutton;
+        private System.Windows.Forms.Button createbutton;
+        private System.Windows.Forms.ComboBox desigcombo;
+        private System.Windows.Forms.DateTimePicker DOBTB;
     }
 }
