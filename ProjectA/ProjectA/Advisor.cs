@@ -52,7 +52,7 @@ namespace ProjectA
 
         private void Advisor_Load(object sender, EventArgs e)
         {
-
+            DataShow();
         }
 
         private void createbutton_Click(object sender, EventArgs e)

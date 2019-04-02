@@ -25,7 +25,7 @@ namespace ProjectA
 
         private void Project_Load(object sender, EventArgs e)
         {
-
+            DataShow();
         }
 
         private void label2_Click(object sender, EventArgs e)

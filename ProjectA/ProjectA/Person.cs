@@ -97,36 +97,43 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            string gen = gendercombo.SelectedItem.ToString();
-            string genGet = "select Id FROM Lookup WHERE Category = 'Gender' AND value ='" + gen + "'";
-            SqlCommand ConvertToInt = new SqlCommand(genGet, conn);
-            int GetGender = 0;
-            SqlDataReader readgen = ConvertToInt.ExecuteReader();
-            while (readgen.Read())
+            if (RegnoTB.Text != "" && FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "")
             {
-                GetGender = int.Parse(readgen[0].ToString());
-            }
+                conn.Open();
+                string gen = gendercombo.SelectedItem.ToString();
+                string genGet = "select Id FROM Lookup WHERE Category = 'Gender' AND value ='" + gen + "'";
+                SqlCommand ConvertToInt = new SqlCommand(genGet, conn);
+                int GetGender = 0;
+                SqlDataReader readgen = ConvertToInt.ExecuteReader();
+                while (readgen.Read())
+                {
+                    GetGender = int.Parse(readgen[0].ToString());
+                }
 
-            string insertall = "INSERT into Person(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + GetGender + "')";
+                string insertall = "INSERT into Person(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + GetGender + "')";
 
-            SqlCommand i = new SqlCommand(insertall, conn);
-            int an = i.ExecuteNonQuery();
-            int total = 0;
-            string scope = "Select Id from Person where (Id = SCOPE_IDENTITY())";
-            SqlCommand command = new SqlCommand(scope, conn);
-            var dig = command.ExecuteScalar().ToString();
-            total = int.Parse(dig);
-            string q = "insert into Student values('" + total + "','" + RegnoTB.Text.ToString() + "')";
-            SqlCommand cmd1 = new SqlCommand(q, conn);
-            int sel = cmd1.ExecuteNonQuery();
-            if (MessageBox.Show("Do You want to Register this Student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                MessageBox.Show("Student is Registered");
+                SqlCommand i = new SqlCommand(insertall, conn);
+                int an = i.ExecuteNonQuery();
+                int total = 0;
+                string scope = "Select Id from Person where (Id = SCOPE_IDENTITY())";
+                SqlCommand command = new SqlCommand(scope, conn);
+                var dig = command.ExecuteScalar().ToString();
+                total = int.Parse(dig);
+                string q = "insert into Student values('" + total + "','" + RegnoTB.Text.ToString() + "')";
+                SqlCommand cmd1 = new SqlCommand(q, conn);
+                int sel = cmd1.ExecuteNonQuery();
+                if (MessageBox.Show("Do You want to Register this Student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Student is Registered");
+                }
+                else
+                {
+                    MessageBox.Show("Student is not Registered", "Register Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Student is not Registered", "Register Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please Enter all details!");
             }
             DataShow();
             conn.Close(); 
@@ -138,10 +145,10 @@ namespace ProjectA
         {
             if (FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "")
             {
-                string per = "UPDATE Person set(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + value + "') where Id = Id";
+                string i = "UPDATE Person set(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + value + "') where Id = Id";
                 conn.Open();
-                SqlCommand persi = new SqlCommand(per, conn);
-                int ii = persi.ExecuteNonQuery();
+                SqlCommand an = new SqlCommand(i, conn);
+                int total = an.ExecuteNonQuery();
                 MessageBox.Show("Data Updated Successfully");
                 conn.Close();
                 DataShow();
@@ -268,12 +275,22 @@ namespace ProjectA
 
         private void RegnoTB_Validating(object sender, CancelEventArgs e)
         {
-            if (!Regex.IsMatch(RegnoTB.Text, "^[A-Z0-9]{8}$"))
+            if (!Regex.IsMatch(RegnoTB.Text, "^[0-9]{4}-[A-Z]{2}-[0-9]{2,3}$"))
             {
                 MessageBox.Show("Invalid Registeration number");
                 RegnoTB.SelectAll();
                 e.Cancel = true;
             }
+        }
+
+        private void DTTB_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DTTB_Validating(object sender, CancelEventArgs e)
+        {
+
         }
     }
 

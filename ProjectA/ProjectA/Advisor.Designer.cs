@@ -49,7 +49,7 @@
             this.updatebutton = new System.Windows.Forms.Button();
             this.createbutton = new System.Windows.Forms.Button();
             this.desigcombo = new System.Windows.Forms.ComboBox();
-            this.DOBTB = new System.Windows.Forms.DateTimePicker();
+            this.DOBTB = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -280,10 +280,10 @@
             // 
             // DOBTB
             // 
-            this.DOBTB.Location = new System.Drawing.Point(125, 305);
+            this.DOBTB.Location = new System.Drawing.Point(125, 304);
             this.DOBTB.Name = "DOBTB";
             this.DOBTB.Size = new System.Drawing.Size(100, 20);
-            this.DOBTB.TabIndex = 41;
+            this.DOBTB.TabIndex = 42;
             // 
             // Advisor
             // 
@@ -347,6 +347,6 @@
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.Button createbutton;
         private System.Windows.Forms.ComboBox desigcombo;
-        private System.Windows.Forms.DateTimePicker DOBTB;
+        private System.Windows.Forms.TextBox DOBTB;
     }
 }

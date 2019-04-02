@@ -25,9 +25,9 @@ namespace ProjectA
 
         private void Evaluation_Load(object sender, EventArgs e)
         {
-            DisplayData();
+            DataShow();
         }
-        private void DisplayData()
+        private void DataShow()
         {
             conn.Open();
             DataTable all = new DataTable();
@@ -54,7 +54,7 @@ namespace ProjectA
                 int i = persi.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Data Inserted Successfully");
-                DisplayData();
+                DataShow();
                 DataClear();
             }
             else
@@ -77,7 +77,7 @@ namespace ProjectA
                 command.ExecuteNonQuery();
                 MessageBox.Show("Updated data");
                 conn.Close();
-                DisplayData();
+                DataShow();
                 DataClear();
             }
             else
@@ -96,7 +96,7 @@ namespace ProjectA
                 command.ExecuteNonQuery();
                 conn.Close();
                 MessageBox.Show("Data Deleted Successfully!");
-                DisplayData();
+                DataShow();
                 DataClear();
             }
             else

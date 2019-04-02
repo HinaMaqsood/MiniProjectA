@@ -47,7 +47,7 @@
             this.RegnoTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DTTB = new System.Windows.Forms.DateTimePicker();
+            this.DTTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -262,10 +262,10 @@
             // 
             // DTTB
             // 
-            this.DTTB.Location = new System.Drawing.Point(153, 303);
+            this.DTTB.Location = new System.Drawing.Point(153, 306);
             this.DTTB.Name = "DTTB";
             this.DTTB.Size = new System.Drawing.Size(100, 20);
-            this.DTTB.TabIndex = 24;
+            this.DTTB.TabIndex = 16;
             // 
             // Person
             // 
@@ -323,7 +323,7 @@
         private System.Windows.Forms.TextBox RegnoTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DateTimePicker DTTB;
+        private System.Windows.Forms.TextBox DTTB;
     }
 }
 
