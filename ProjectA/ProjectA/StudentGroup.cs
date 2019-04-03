@@ -62,5 +62,25 @@ namespace ProjectA
         {
 
         }
+
+        private void SGTB_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SGTB_Validating(object sender, CancelEventArgs e)
+        {
+            if (!Regex.IsMatch(SGTB.Text, "^[0-9]{4}-[A-Z]{2}-[0-9]{2,3}$"))
+            {
+                MessageBox.Show("Invalid Registeration number");
+                SGTB.SelectAll();
+                e.Cancel = true;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

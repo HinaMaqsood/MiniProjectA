@@ -121,6 +121,11 @@ namespace ProjectA
                 e.Cancel = true;
             }
         }
+
+        private void FN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

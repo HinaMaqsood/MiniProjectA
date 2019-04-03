@@ -1,6 +1,6 @@
 ﻿namespace ProjectA
 {
-    partial class ProjectAdvisor
+    partial class GroupProject
     {
         /// <summary>
         /// Required designer variable.
@@ -30,22 +30,18 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.GCB = new System.Windows.Forms.ComboBox();
+            this.TPCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ACB = new System.Windows.Forms.ComboBox();
-            this.TCB = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ATB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.createbutton = new System.Windows.Forms.Button();
             this.deletebutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,8 +51,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 100);
-            this.panel1.TabIndex = 35;
+            this.panel1.Size = new System.Drawing.Size(913, 100);
+            this.panel1.TabIndex = 36;
             // 
             // label4
             // 
@@ -65,69 +61,47 @@
             this.label4.ForeColor = System.Drawing.Color.Maroon;
             this.label4.Location = new System.Drawing.Point(3, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 57);
+            this.label4.Size = new System.Drawing.Size(272, 57);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Project Advisor";
+            this.label4.Text = "Project Group";
             // 
-            // label2
+            // GCB
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(71, 211);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 16);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Title of Project";
+            this.GCB.FormattingEnabled = true;
+            this.GCB.Location = new System.Drawing.Point(171, 154);
+            this.GCB.Name = "GCB";
+            this.GCB.Size = new System.Drawing.Size(150, 21);
+            this.GCB.TabIndex = 48;
+            // 
+            // TPCB
+            // 
+            this.TPCB.FormattingEnabled = true;
+            this.TPCB.Location = new System.Drawing.Point(171, 199);
+            this.TPCB.Name = "TPCB";
+            this.TPCB.Size = new System.Drawing.Size(150, 21);
+            this.TPCB.TabIndex = 47;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(71, 261);
+            this.label1.Location = new System.Drawing.Point(51, 159);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Advisor Role";
+            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.TabIndex = 46;
+            this.label1.Text = "Group No";
             // 
-            // ACB
+            // label2
             // 
-            this.ACB.FormattingEnabled = true;
-            this.ACB.Items.AddRange(new object[] {
-            "Main Advisor",
-            "Co-Advisror",
-            "Industry Advisor"});
-            this.ACB.Location = new System.Drawing.Point(191, 256);
-            this.ACB.Name = "ACB";
-            this.ACB.Size = new System.Drawing.Size(150, 21);
-            this.ACB.TabIndex = 42;
-            // 
-            // TCB
-            // 
-            this.TCB.FormattingEnabled = true;
-            this.TCB.Location = new System.Drawing.Point(191, 211);
-            this.TCB.Name = "TCB";
-            this.TCB.Size = new System.Drawing.Size(150, 21);
-            this.TCB.TabIndex = 44;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Maroon;
-            this.label3.Location = new System.Drawing.Point(71, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
-            this.label3.TabIndex = 45;
-            this.label3.Text = "Advisor";
-            // 
-            // ATB
-            // 
-            this.ATB.Location = new System.Drawing.Point(191, 167);
-            this.ATB.Name = "ATB";
-            this.ATB.Size = new System.Drawing.Size(150, 20);
-            this.ATB.TabIndex = 46;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Maroon;
+            this.label2.Location = new System.Drawing.Point(51, 204);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Title of Project";
             // 
             // panel2
             // 
@@ -135,10 +109,10 @@
             this.panel2.Controls.Add(this.createbutton);
             this.panel2.Controls.Add(this.deletebutton);
             this.panel2.Controls.Add(this.updatebutton);
-            this.panel2.Location = new System.Drawing.Point(523, 357);
+            this.panel2.Location = new System.Drawing.Point(531, 357);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 100);
-            this.panel2.TabIndex = 47;
+            this.panel2.TabIndex = 49;
             // 
             // createbutton
             // 
@@ -186,50 +160,31 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(414, 106);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(601, 235);
-            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.Size = new System.Drawing.Size(496, 235);
+            this.dataGridView1.TabIndex = 50;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(347, 106);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(607, 241);
-            this.tableLayoutPanel2.TabIndex = 40;
-            // 
-            // ProjectAdvisor
+            // GroupProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(934, 466);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.ClientSize = new System.Drawing.Size(913, 469);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ATB);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.TCB);
-            this.Controls.Add(this.ACB);
+            this.Controls.Add(this.GCB);
+            this.Controls.Add(this.TPCB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Name = "ProjectAdvisor";
-            this.Text = "ProjectAdvisor";
-            this.Load += new System.EventHandler(this.ProjectAdvisor_Load);
+            this.Name = "GroupProject";
+            this.Text = "GroupProject";
+            this.Load += new System.EventHandler(this.GroupProject_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,17 +194,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox GCB;
+        private System.Windows.Forms.ComboBox TPCB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox ACB;
-        private System.Windows.Forms.ComboBox TCB;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox ATB;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button createbutton;
         private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }

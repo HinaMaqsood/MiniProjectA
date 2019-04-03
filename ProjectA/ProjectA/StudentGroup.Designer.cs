@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(919, 100);
+            this.panel1.Size = new System.Drawing.Size(927, 100);
             this.panel1.TabIndex = 34;
             // 
             // label4
@@ -124,6 +124,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(570, 225);
             this.dataGridView1.TabIndex = 41;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // deletebutton
             // 
@@ -170,6 +171,8 @@
             this.SGTB.Name = "SGTB";
             this.SGTB.Size = new System.Drawing.Size(150, 20);
             this.SGTB.TabIndex = 45;
+            this.SGTB.TextChanged += new System.EventHandler(this.SGTB_TextChanged_1);
+            this.SGTB.Validating += new System.ComponentModel.CancelEventHandler(this.SGTB_Validating);
             // 
             // textBox1
             // 
@@ -183,7 +186,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(919, 450);
+            this.ClientSize = new System.Drawing.Size(927, 450);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.SGTB);
             this.Controls.Add(this.deletebutton);

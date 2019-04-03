@@ -28,3 +28,4 @@ C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\Proj
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Group.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.ManageGroups.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.StudentGroup.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectAdvisor.resources
