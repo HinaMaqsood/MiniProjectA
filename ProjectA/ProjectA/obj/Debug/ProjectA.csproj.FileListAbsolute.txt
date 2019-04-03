@@ -25,3 +25,6 @@ C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\Proj
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Project.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csprojAssemblyReference.cache
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Evaluation.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Group.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.ManageGroups.resources
+C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.StudentGroup.resources

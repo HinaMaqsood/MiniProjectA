@@ -87,6 +87,7 @@
             this.CBN.TabIndex = 41;
             this.CBN.Text = "Create";
             this.CBN.UseVisualStyleBackColor = false;
+            this.CBN.Click += new System.EventHandler(this.CBN_Click);
             // 
             // Group
             // 
@@ -101,6 +102,7 @@
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.Name = "Group";
             this.Text = "Group";
+            this.Load += new System.EventHandler(this.Group_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

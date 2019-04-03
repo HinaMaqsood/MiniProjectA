@@ -170,5 +170,10 @@ namespace ProjectA
         {
 
         }
+
+        private void desigcombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

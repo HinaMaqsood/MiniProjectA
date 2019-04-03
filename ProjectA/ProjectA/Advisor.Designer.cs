@@ -275,6 +275,7 @@
             this.desigcombo.Name = "desigcombo";
             this.desigcombo.Size = new System.Drawing.Size(100, 21);
             this.desigcombo.TabIndex = 40;
+            this.desigcombo.SelectedIndexChanged += new System.EventHandler(this.desigcombo_SelectedIndexChanged);
             this.desigcombo.StyleChanged += new System.EventHandler(this.desigcombo_StyleChanged);
             this.desigcombo.Validated += new System.EventHandler(this.desigcombo_Validated);
             // 

@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.FN = new System.Windows.Forms.Label();
-            this.SGTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.GSTB = new System.Windows.Forms.TextBox();
@@ -40,6 +39,8 @@
             this.deletebutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.createbutton = new System.Windows.Forms.Button();
+            this.SGTB = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,36 +71,29 @@
             this.FN.AutoSize = true;
             this.FN.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FN.ForeColor = System.Drawing.Color.Maroon;
-            this.FN.Location = new System.Drawing.Point(75, 217);
+            this.FN.Location = new System.Drawing.Point(40, 212);
             this.FN.Name = "FN";
             this.FN.Size = new System.Drawing.Size(46, 16);
             this.FN.TabIndex = 35;
             this.FN.Text = "Status";
-            // 
-            // SGTB
-            // 
-            this.SGTB.Location = new System.Drawing.Point(160, 178);
-            this.SGTB.Name = "SGTB";
-            this.SGTB.Size = new System.Drawing.Size(150, 20);
-            this.SGTB.TabIndex = 36;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(74, 182);
+            this.label1.Location = new System.Drawing.Point(39, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 37;
-            this.label1.Text = "Student";
+            this.label1.Text = "Student RegNo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(74, 146);
+            this.label2.Location = new System.Drawing.Point(39, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 38;
@@ -115,7 +109,10 @@
             // StatusCB
             // 
             this.StatusCB.FormattingEnabled = true;
-            this.StatusCB.Location = new System.Drawing.Point(160, 212);
+            this.StatusCB.Items.AddRange(new object[] {
+            "Active",
+            "InActive"});
+            this.StatusCB.Location = new System.Drawing.Point(93, 258);
             this.StatusCB.Name = "StatusCB";
             this.StatusCB.Size = new System.Drawing.Size(150, 21);
             this.StatusCB.TabIndex = 40;
@@ -139,6 +136,7 @@
             this.deletebutton.TabIndex = 44;
             this.deletebutton.Text = "Delete";
             this.deletebutton.UseVisualStyleBackColor = false;
+            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
             // 
             // updatebutton
             // 
@@ -151,6 +149,7 @@
             this.updatebutton.TabIndex = 43;
             this.updatebutton.Text = "Update";
             this.updatebutton.UseVisualStyleBackColor = false;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
             // 
             // createbutton
             // 
@@ -163,6 +162,21 @@
             this.createbutton.TabIndex = 42;
             this.createbutton.Text = "Create";
             this.createbutton.UseVisualStyleBackColor = false;
+            this.createbutton.Click += new System.EventHandler(this.createbutton_Click);
+            // 
+            // SGTB
+            // 
+            this.SGTB.Location = new System.Drawing.Point(160, 178);
+            this.SGTB.Name = "SGTB";
+            this.SGTB.Size = new System.Drawing.Size(150, 20);
+            this.SGTB.TabIndex = 45;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(160, 212);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 46;
             // 
             // StudentGroup
             // 
@@ -170,6 +184,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(919, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.SGTB);
             this.Controls.Add(this.deletebutton);
             this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.createbutton);
@@ -178,11 +194,11 @@
             this.Controls.Add(this.GSTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SGTB);
             this.Controls.Add(this.FN);
             this.Controls.Add(this.panel1);
             this.Name = "StudentGroup";
             this.Text = "StudentGroup";
+            this.Load += new System.EventHandler(this.StudentGroup_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -196,7 +212,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label FN;
-        private System.Windows.Forms.TextBox SGTB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox GSTB;
@@ -205,5 +220,7 @@
         private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.Button createbutton;
+        private System.Windows.Forms.TextBox SGTB;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
