@@ -32,6 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FN = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.CBN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,12 +76,25 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 35;
             // 
+            // CBN
+            // 
+            this.CBN.BackColor = System.Drawing.Color.DarkCyan;
+            this.CBN.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBN.ForeColor = System.Drawing.Color.Maroon;
+            this.CBN.Location = new System.Drawing.Point(197, 221);
+            this.CBN.Name = "CBN";
+            this.CBN.Size = new System.Drawing.Size(126, 49);
+            this.CBN.TabIndex = 41;
+            this.CBN.Text = "Create";
+            this.CBN.UseVisualStyleBackColor = false;
+            // 
             // Group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(898, 450);
+            this.Controls.Add(this.CBN);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.FN);
             this.Controls.Add(this.panel1);
@@ -100,5 +114,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label FN;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button CBN;
     }
 }
