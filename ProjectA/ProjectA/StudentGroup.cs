@@ -33,23 +33,43 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (GSTB.Text != "" && SGTB.Text != "" )
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM [GroupStudent] WHERE (GroupId = '" + GSTB.Text + " ')", conn);
+            object count = cmd.ExecuteScalar();
+            int k = 0;
+            if (!(count == DBNull.Value))
             {
-                conn.Open();
-               // string Status;
-               // Status = string.Format("SELECT Id from Lookup WHERE Category = 'STATUS' AND Value = '{0}'", StatusCB.Text);
-               // SqlCommand cmd = new SqlCommand(Status, conn);
-               // int id = (Int32)cmd.ExecuteScalar();
-                string q1 = ("Insert into GroupStudent(groupId, StudentId, Status, AssignmentDate)" + " VALUES (@Gid, (Select Id FROM Student WHERE RegistrationNo = @reg), (SELECT Id From Lookup WHERE Category = 'STATUS' and Value = @status), @Assigndate)");
-                SqlCommand cmd1 = new SqlCommand(q1, conn);
-                cmd1.Parameters.AddWithValue("@Gid", GSTB.Text);
-                cmd1.Parameters.AddWithValue("@reg", SGTB.Text);
-                cmd1.Parameters.AddWithValue("@status", textBox1.Text);
-                cmd1.Parameters.AddWithValue("@Assigndate", DateTime.Now);
-                cmd1.ExecuteNonQuery();
-                cmd1.Parameters.Clear();
-                MessageBox.Show("Data is inserted!");
-                conn.Close();
+                k = Convert.ToInt32(count);
+            }
+
+            conn.Close();
+            if (k == 4)
+            {
+
+                MessageBox.Show("No more students can be added because this group already contains 4 students.");
+            }
+
+            else
+            {
+                if (GSTB.Text != "" && SGTB.Text != "")
+                {
+                    conn.Open();
+                    // string Status;
+                    // Status = string.Format("SELECT Id from Lookup WHERE Category = 'STATUS' AND Value = '{0}'", StatusCB.Text);
+                    // SqlCommand cmd = new SqlCommand(Status, conn);
+                    // int id = (Int32)cmd.ExecuteScalar();
+                    string q1 = ("Insert into GroupStudent(groupId, StudentId, Status, AssignmentDate)" + " VALUES (@Gid, (Select Id FROM Student WHERE RegistrationNo = @reg), (SELECT Id From Lookup WHERE Category = 'STATUS' and Value = @status), @Assigndate)");
+                    SqlCommand cmd1 = new SqlCommand(q1, conn);
+                    cmd1.Parameters.AddWithValue("@Gid", GSTB.Text);
+                    cmd1.Parameters.AddWithValue("@reg", SGTB.Text);
+                    cmd1.Parameters.AddWithValue("@status", textBox1.Text);
+                    cmd1.Parameters.AddWithValue("@Assigndate", DateTime.Now);
+                    cmd1.ExecuteNonQuery();
+                    cmd1.Parameters.Clear();
+                    MessageBox.Show("Data is inserted!");
+                    conn.Close();
+                }
             }
         }
 
@@ -79,6 +99,11 @@ namespace ProjectA
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GSTB_TextChanged(object sender, EventArgs e)
         {
 
         }

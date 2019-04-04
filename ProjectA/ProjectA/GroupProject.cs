@@ -14,32 +14,29 @@ namespace ProjectA
 {
     public partial class GroupProject : Form
     {
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-REMV6L1\SQLEXPRESS;Initial Catalog=ProjectA;MultipleActiveResultSets=true;Integrated Security=True;");
+        SqlDataAdapter Adopt;
         public GroupProject()
         {
             InitializeComponent();
-           
         }
-
-
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-REMV6L1\SQLEXPRESS;Initial Catalog=ProjectA;MultipleActiveResultSets=true;Integrated Security=True;");
-        SqlDataAdapter Adopt;
 
         private void GroupProject_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter s = new SqlDataAdapter("Select Title FROM Project", conn);
-            DataTable dt = new DataTable();
-            s.Fill(dt);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            SqlDataAdapter ui = new SqlDataAdapter("Select Title FROM Project", conn);
+            DataTable load = new DataTable();
+            ui.Fill(load);
+            for (int i = 0; i < load.Rows.Count; i++)
             {
 
-                TPCB.Items.Add(dt.Rows[i]["Title"]);
+                TPCB.Items.Add(load.Rows[i]["Title"]);
             }
-            SqlDataAdapter sd = new SqlDataAdapter("Select Id FROM [Group]", conn);
-            DataTable d = new DataTable();
-            sd.Fill(d);
-            for (int i = 0; i < d.Rows.Count; i++)
+            SqlDataAdapter ui1 = new SqlDataAdapter("Select Id FROM [Group]", conn);
+            DataTable load1 = new DataTable();
+            ui1.Fill(load1);
+            for (int i = 0; i < load1.Rows.Count; i++)
             {
-                GCB.Items.Add(d.Rows[i]["Id"]);
+                GCB.Items.Add(load1.Rows[i]["Id"]);
             }
         }
 
@@ -55,23 +52,26 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (GCB.Text != "" && TPCB.Text != "")
+            if (GCB.Text == "" && TPCB.Text == "")
             {
-                conn.Open();
-
-
-                string q = "INSERT into GroupProject(ProjectId,GroupId,AssignmentDate) VALUES (  (Select Id FROM Project WHERE Title = '" + TPCB.Text + "'), (SELECT Id FROM [Group] WHERE Id = '" + GCB.Text + "'), '" + DateTime.Now + "')";
-
-                SqlCommand cmd = new SqlCommand(q, conn);
-
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Data Added Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DisplayData();
-
+                MessageBox.Show("Could not be Empty. Please Enter data!");
             }
             else
-                MessageBox.Show("Enter Data to insert");
+                conn.Open();
+                string q = "INSERT into GroupProject(ProjectId,GroupId,AssignmentDate) VALUES ((Select Id FROM Project WHERE Title = '" + TPCB.Text + "'), (SELECT Id FROM [Group] WHERE Id = '" + GCB.Text + "'), '" + DateTime.Now + "')";
+                SqlCommand cmd = new SqlCommand(q, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                if (MessageBox.Show("Do You assign this group, a project title?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    MessageBox.Show("Assignment of title is saved!");
+                }
+                else
+                {
+                    MessageBox.Show("Assignment of title is saved!", "Save it Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                MessageBox.Show("Title saved", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DisplayData();
         }
     }
 }

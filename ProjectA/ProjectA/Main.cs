@@ -52,5 +52,29 @@ namespace ProjectA
             Evaluation fm2 = new Evaluation();
             fm2.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ManageGroups id0 = new ManageGroups();
+            id0.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            ProjectAdvisor id1 = new ProjectAdvisor();
+            id1.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GroupProject id2 = new GroupProject();
+            id2.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            GroupEvaluation id3 = new GroupEvaluation();
+            id3.Show();
+        }
     }
 }

@@ -26,6 +26,7 @@ namespace ProjectA
         private void Project_Load(object sender, EventArgs e)
         {
             DataShow();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -50,22 +51,36 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
+
             conn.Open();
-            if (titleTB.Text != "" && descTB.Text != "")
+            SqlCommand c = new SqlCommand("SELECT COUNT(*) FROM Project WHERE (Title = @user  )", conn);
+            c.Parameters.AddWithValue("@user", titleTB.Text);
+
+
+            int user = (int)c.ExecuteScalar();
+            conn.Close();
+            if (user > 0)
             {
-                string insertit = "INSERT into Project(Description, Title) values ('" + descTB.Text + "' , '" + titleTB.Text + "')";
-                SqlCommand offset = new SqlCommand(insertit, conn);
-                int i = offset.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Data Inserted Successfully");
-                DataShow();
-                DataClean();
+                MessageBox.Show("Project is already Present.");
             }
             else
             {
-                MessageBox.Show("Please Enter Details!");
+                conn.Open();
+                if (titleTB.Text != "" && descTB.Text != "")
+                {
+                    string insertit = "INSERT into Project(Description, Title) values ('" + descTB.Text + "' , '" + titleTB.Text + "')";
+                    SqlCommand offset = new SqlCommand(insertit, conn);
+                    int i = offset.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Data Inserted Successfully");
+                    DataShow();
+                    DataClean();
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter Details!");
+                }
             }
-
         }
 
         private void updatebutton_Click(object sender, EventArgs e)
@@ -123,6 +138,11 @@ namespace ProjectA
         }
 
         private void FN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleTB_TextChanged(object sender, EventArgs e)
         {
 
         }

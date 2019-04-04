@@ -105,6 +105,7 @@
             this.GSTB.Name = "GSTB";
             this.GSTB.Size = new System.Drawing.Size(150, 20);
             this.GSTB.TabIndex = 39;
+            this.GSTB.TextChanged += new System.EventHandler(this.GSTB_TextChanged);
             // 
             // StatusCB
             // 

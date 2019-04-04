@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Desktop\iTextSharp\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +66,18 @@
     </Compile>
     <Compile Include="Group.Designer.cs">
       <DependentUpon>Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupEvaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupEvaluation.Designer.cs">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupProject.Designer.cs">
+      <DependentUpon>GroupProject.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageGroups.cs">
       <SubType>Form</SubType>
@@ -96,6 +111,12 @@
       <DependentUpon>ProjectAdvisor.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentGroup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Group.resx">
       <DependentUpon>Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupEvaluation.resx">
+      <DependentUpon>GroupEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupProject.resx">
+      <DependentUpon>GroupProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageGroups.resx">
       <DependentUpon>ManageGroups.cs</DependentUpon>
@@ -142,6 +169,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentGroup.resx">
       <DependentUpon>StudentGroup.cs</DependentUpon>
     </EmbeddedResource>

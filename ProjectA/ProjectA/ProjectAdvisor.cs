@@ -23,6 +23,7 @@ namespace ProjectA
 
         private void ProjectAdvisor_Load(object sender, EventArgs e)
         {
+           
             SqlDataAdapter ada = new SqlDataAdapter("Select Title FROM Project", conn);
             DataTable dt = new DataTable();
             ada.Fill(dt);
@@ -34,11 +35,34 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (ATB.Text != "")
+
+            conn.Open();
+            SqlCommand c;
+            c = new SqlCommand("SELECT COUNT(1) FROM ProjectAdvisor WHERE (AdvisorId = '" + ATB.Text + " ')", conn);
+            object k = c.ExecuteScalar();
+            int count = 0;
+            if (!(k == DBNull.Value))
             {
-                conn.Open();
+                count = Convert.ToInt32(k);
+            }
+
+            conn.Close();
+            if (count == 3)
+            {
+
+                MessageBox.Show("Advisor cant be assigned more than 3 projects");
+            }
+
+            else
+            {
 
 
+                if (ATB.Text == "")
+                {
+                    MessageBox.Show("Empty boxes are not valid. Please Fill them!");
+                }
+                else
+                    conn.Open();
                 string query = "INSERT into ProjectAdvisor(AdvisorId, ProjectId, AdvisorRole, AssignmentDate) VALUES ( (SELECT Id FROM Advisor WHERE Advisor.Id = '" + ATB.Text + "' ), (Select Id FROM Project WHERE Title = '" + TCB.Text + "'), (SELECT Id FROM Lookup WHERE Category = 'ADVISOR_ROLE' AND Value = '" + ACB.Text + "'), '" + DateTime.Now + "')";
                 //(SELECT Advisor.Id FROM (Person JOIN Advisor ON Advisor.Id = Person.Id)  WHERE FirstName =  @fname And LastName = @lname) 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -58,10 +82,7 @@ namespace ProjectA
                 {
                     MessageBox.Show("Advisor role is not saved", "Save it Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
-            else
-                MessageBox.Show("Empty boxes are not valid. Please Fill them!");
         }
     }
 }

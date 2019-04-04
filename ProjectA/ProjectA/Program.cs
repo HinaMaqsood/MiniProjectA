@@ -16,7 +16,7 @@ namespace ProjectA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProjectAdvisor());
+            Application.Run(new Welcome());
         }
     }
 }

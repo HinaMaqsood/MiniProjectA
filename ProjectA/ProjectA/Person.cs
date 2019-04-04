@@ -97,46 +97,61 @@ namespace ProjectA
 
         private void createbutton_Click(object sender, EventArgs e)
         {
-            if (RegnoTB.Text != "" && FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "")
+            conn.Open();
+            SqlCommand check_User_Name = new SqlCommand("SELECT COUNT(RegistrationNo) FROM [Student] WHERE (RegistrationNo = @user)", conn);
+            check_User_Name.Parameters.AddWithValue("@user", RegnoTB.Text);
+            int UserExist = (int)check_User_Name.ExecuteScalar();
+            conn.Close();
+            if (UserExist > 0)
             {
-                conn.Open();
-                string gen = gendercombo.SelectedItem.ToString();
-                string genGet = "select Id FROM Lookup WHERE Category = 'Gender' AND value ='" + gen + "'";
-                SqlCommand ConvertToInt = new SqlCommand(genGet, conn);
-                int GetGender = 0;
-                SqlDataReader readgen = ConvertToInt.ExecuteReader();
-                while (readgen.Read())
-                {
-                    GetGender = int.Parse(readgen[0].ToString());
-                }
-
-                string insertall = "INSERT into Person(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + GetGender + "')";
-
-                SqlCommand i = new SqlCommand(insertall, conn);
-                int an = i.ExecuteNonQuery();
-                int total = 0;
-                string scope = "Select Id from Person where (Id = SCOPE_IDENTITY())";
-                SqlCommand command = new SqlCommand(scope, conn);
-                var dig = command.ExecuteScalar().ToString();
-                total = int.Parse(dig);
-                string q = "insert into Student values('" + total + "','" + RegnoTB.Text.ToString() + "')";
-                SqlCommand cmd1 = new SqlCommand(q, conn);
-                int sel = cmd1.ExecuteNonQuery();
-                if (MessageBox.Show("Do You want to Register this Student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    MessageBox.Show("Student is Registered");
-                }
-                else
-                {
-                    MessageBox.Show("Student is not Registered", "Register Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show("This Registration Number is already registered");
             }
             else
             {
-                MessageBox.Show("Please Enter all details!");
+
+
+                if (RegnoTB.Text != "" && FNTB.Text != "" && LNTB.Text != "" && ContactNoTB.Text != "" && EmailTB.Text != "" && DTTB.Text != "")
+                {
+                    conn.Open();
+                    string gen = gendercombo.SelectedItem.ToString();
+                    string genGet = "select Id FROM Lookup WHERE Category = 'Gender' AND value ='" + gen + "'";
+                    SqlCommand ConvertToInt = new SqlCommand(genGet, conn);
+                    int GetGender = 0;
+                    SqlDataReader readgen = ConvertToInt.ExecuteReader();
+                    while (readgen.Read())
+                    {
+                        GetGender = int.Parse(readgen[0].ToString());
+                    }
+
+                    string insertall = "INSERT into Person(FirstName , LastName , Contact , Email , DateOfBirth , Gender) values ('" + FNTB.Text + "' , '" + LNTB.Text + "' , '" + ContactNoTB.Text + "' , '" + EmailTB.Text + "' , '" + DateTime.Parse(DTTB.Text) + "' , '" + GetGender + "')";
+
+                    SqlCommand i = new SqlCommand(insertall, conn);
+                    int an = i.ExecuteNonQuery();
+                    int total = 0;
+                    string scope = "Select Id from Person where (Id = SCOPE_IDENTITY())";
+                    SqlCommand command = new SqlCommand(scope, conn);
+                    var dig = command.ExecuteScalar().ToString();
+                    total = int.Parse(dig);
+                    string q = "insert into Student values('" + total + "','" + RegnoTB.Text.ToString() + "')";
+                    SqlCommand cmd1 = new SqlCommand(q, conn);
+                    int sel = cmd1.ExecuteNonQuery();
+                    conn.Close();
+                    if (MessageBox.Show("Do You want to Register this Student?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Student is Registered");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Student is not Registered", "Register Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Enter all details!");
+                }
             }
             DataShow();
-            conn.Close(); 
+            
 
            
         }

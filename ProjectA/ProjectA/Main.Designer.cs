@@ -36,6 +36,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -53,7 +57,7 @@
             this.button2.BackColor = System.Drawing.Color.DarkCyan;
             this.button2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Location = new System.Drawing.Point(1, 79);
+            this.button2.Location = new System.Drawing.Point(1, 84);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(152, 52);
             this.button2.TabIndex = 1;
@@ -66,7 +70,7 @@
             this.button6.BackColor = System.Drawing.Color.DarkCyan;
             this.button6.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.Maroon;
-            this.button6.Location = new System.Drawing.Point(1, 253);
+            this.button6.Location = new System.Drawing.Point(1, 264);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(152, 50);
             this.button6.TabIndex = 5;
@@ -79,7 +83,7 @@
             this.button7.BackColor = System.Drawing.Color.DarkCyan;
             this.button7.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Maroon;
-            this.button7.Location = new System.Drawing.Point(1, 195);
+            this.button7.Location = new System.Drawing.Point(1, 203);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(152, 52);
             this.button7.TabIndex = 6;
@@ -92,7 +96,7 @@
             this.button8.BackColor = System.Drawing.Color.DarkCyan;
             this.button8.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Maroon;
-            this.button8.Location = new System.Drawing.Point(1, 137);
+            this.button8.Location = new System.Drawing.Point(1, 142);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(152, 52);
             this.button8.TabIndex = 7;
@@ -118,11 +122,63 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Font = new System.Drawing.Font("Gill Sans MT", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(246, 115);
+            this.label1.Location = new System.Drawing.Point(172, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(507, 162);
             this.label1.TabIndex = 33;
             this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkCyan;
+            this.button3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Maroon;
+            this.button3.Location = new System.Drawing.Point(701, 85);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(243, 52);
+            this.button3.TabIndex = 34;
+            this.button3.Text = "Student Group";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DarkCyan;
+            this.button4.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Maroon;
+            this.button4.Location = new System.Drawing.Point(702, 143);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(242, 52);
+            this.button4.TabIndex = 35;
+            this.button4.Text = "Assign Project Advisor";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Maroon;
+            this.button5.Location = new System.Drawing.Point(702, 204);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(242, 52);
+            this.button5.TabIndex = 36;
+            this.button5.Text = "Assign Project";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.DarkCyan;
+            this.button9.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.Maroon;
+            this.button9.Location = new System.Drawing.Point(701, 263);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(242, 52);
+            this.button9.TabIndex = 37;
+            this.button9.Text = "Mark Evaluations";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Main
             // 
@@ -131,7 +187,11 @@
             this.BackColor = System.Drawing.Color.LightCyan;
             this.BackgroundImage = global::ProjectA.Properties.Resources.fyp2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(945, 450);
+            this.ClientSize = new System.Drawing.Size(954, 389);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button8);
@@ -155,5 +215,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button9;
     }
 }
