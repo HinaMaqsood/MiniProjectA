@@ -37,6 +37,16 @@ namespace ProjectA
 
         }
 
+        private void DataShow()
+        {
+            conn.Open();
+            DataTable all = new DataTable();
+            Adopt = new SqlDataAdapter("SELECT * from [Group]", conn);
+            Adopt.Fill(all);
+            dataGridView1.DataSource = all;
+            conn.Close();
+        }
+
         private void CBN_Click(object sender, EventArgs e)
         { 
             conn.Open();
@@ -49,6 +59,8 @@ namespace ProjectA
                 MessageBox.Show("Error");
             conn.Close();
             MessageBox.Show("Data is Created!");
+            DataShow();
+
         }
     }
 }

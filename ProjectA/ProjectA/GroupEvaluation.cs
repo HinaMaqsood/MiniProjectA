@@ -40,6 +40,16 @@ namespace ProjectA
             }
         }
 
+        private void DataShow()
+        {
+            conn.Open();
+            DataTable all = new DataTable();
+            Adopt = new SqlDataAdapter("SELECT * from GroupEvaluation", conn);
+            Adopt.Fill(all);
+            dataGridView1.DataSource = all;
+            conn.Close();
+        }
+
         private void createbutton_Click(object sender, EventArgs e)
         {
             if (OMTB.Text == "")
@@ -64,6 +74,12 @@ namespace ProjectA
                 MessageBox.Show("Obtained Marks are not saved!", "Save it Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             MessageBox.Show("Entered Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            DataShow();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

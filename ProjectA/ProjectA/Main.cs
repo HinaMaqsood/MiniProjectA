@@ -76,5 +76,11 @@ namespace ProjectA
             GroupEvaluation id3 = new GroupEvaluation();
             id3.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Report REP = new Report();
+            REP.Show();
+        }
     }
 }

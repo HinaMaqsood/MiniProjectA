@@ -33,6 +33,17 @@ namespace ProjectA
             }
         }
 
+
+        private void DataShow()
+        {
+            conn.Open();
+            DataTable all = new DataTable();
+            Adopt = new SqlDataAdapter("SELECT * from ProjectAdvisor", conn);
+            Adopt.Fill(all);
+            dataGridView1.DataSource = all;
+            conn.Close();
+        }
+
         private void createbutton_Click(object sender, EventArgs e)
         {
 
@@ -77,12 +88,19 @@ namespace ProjectA
                 if (MessageBox.Show("Do You want to save Advisor Role?", "Register", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     MessageBox.Show("Advisor role is Saved");
+                    DataShow();
                 }
+               
                 else
                 {
                     MessageBox.Show("Advisor role is not saved", "Save it Again", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void TCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

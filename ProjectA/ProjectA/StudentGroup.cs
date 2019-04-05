@@ -28,6 +28,15 @@ namespace ProjectA
 
         private void StudentGroup_Load(object sender, EventArgs e)
         {
+            SqlDataAdapter ui = new SqlDataAdapter("Select Title FROM Project", conn);
+            DataTable load = new DataTable();
+            ui.Fill(load);
+            for (int i = 0; i < load.Rows.Count; i++)
+            {
+
+                GCombo.Items.Add(load.Rows[i]["Title"]);
+            }
+
 
         }
 
@@ -35,7 +44,7 @@ namespace ProjectA
         {
 
             conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM [GroupStudent] WHERE (GroupId = '" + GSTB.Text + " ')", conn);
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(1) FROM [GroupStudent] WHERE (GroupId = '" + GCombo.Text + " ')", conn);
             object count = cmd.ExecuteScalar();
             int k = 0;
             if (!(count == DBNull.Value))
@@ -52,7 +61,7 @@ namespace ProjectA
 
             else
             {
-                if (GSTB.Text != "" && SGTB.Text != "")
+                if (GCombo.Text != "" && SGTB.Text != "")
                 {
                     conn.Open();
                     // string Status;
@@ -61,7 +70,7 @@ namespace ProjectA
                     // int id = (Int32)cmd.ExecuteScalar();
                     string q1 = ("Insert into GroupStudent(groupId, StudentId, Status, AssignmentDate)" + " VALUES (@Gid, (Select Id FROM Student WHERE RegistrationNo = @reg), (SELECT Id From Lookup WHERE Category = 'STATUS' and Value = @status), @Assigndate)");
                     SqlCommand cmd1 = new SqlCommand(q1, conn);
-                    cmd1.Parameters.AddWithValue("@Gid", GSTB.Text);
+                    cmd1.Parameters.AddWithValue("@Gid", GCombo.Text);
                     cmd1.Parameters.AddWithValue("@reg", SGTB.Text);
                     cmd1.Parameters.AddWithValue("@status", textBox1.Text);
                     cmd1.Parameters.AddWithValue("@Assigndate", DateTime.Now);

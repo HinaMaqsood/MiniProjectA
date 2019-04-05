@@ -110,6 +110,7 @@
             this.TCB.Name = "TCB";
             this.TCB.Size = new System.Drawing.Size(150, 21);
             this.TCB.TabIndex = 44;
+            this.TCB.SelectedIndexChanged += new System.EventHandler(this.TCB_SelectedIndexChanged);
             // 
             // label3
             // 

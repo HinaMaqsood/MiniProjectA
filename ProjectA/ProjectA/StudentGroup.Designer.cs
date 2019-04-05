@@ -33,14 +33,13 @@
             this.FN = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.GSTB = new System.Windows.Forms.TextBox();
-            this.StatusCB = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.deletebutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.createbutton = new System.Windows.Forms.Button();
             this.SGTB = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.GCombo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -98,25 +97,6 @@
             this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 38;
             this.label2.Text = "Group";
-            // 
-            // GSTB
-            // 
-            this.GSTB.Location = new System.Drawing.Point(160, 142);
-            this.GSTB.Name = "GSTB";
-            this.GSTB.Size = new System.Drawing.Size(150, 20);
-            this.GSTB.TabIndex = 39;
-            this.GSTB.TextChanged += new System.EventHandler(this.GSTB_TextChanged);
-            // 
-            // StatusCB
-            // 
-            this.StatusCB.FormattingEnabled = true;
-            this.StatusCB.Items.AddRange(new object[] {
-            "Active",
-            "InActive"});
-            this.StatusCB.Location = new System.Drawing.Point(93, 258);
-            this.StatusCB.Name = "StatusCB";
-            this.StatusCB.Size = new System.Drawing.Size(150, 21);
-            this.StatusCB.TabIndex = 40;
             // 
             // dataGridView1
             // 
@@ -182,20 +162,27 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 46;
             // 
+            // GCombo
+            // 
+            this.GCombo.FormattingEnabled = true;
+            this.GCombo.Location = new System.Drawing.Point(160, 141);
+            this.GCombo.Name = "GCombo";
+            this.GCombo.Size = new System.Drawing.Size(150, 21);
+            this.GCombo.TabIndex = 47;
+            // 
             // StudentGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(927, 450);
+            this.Controls.Add(this.GCombo);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.SGTB);
             this.Controls.Add(this.deletebutton);
             this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.createbutton);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.StatusCB);
-            this.Controls.Add(this.GSTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FN);
@@ -218,13 +205,12 @@
         private System.Windows.Forms.Label FN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox GSTB;
-        private System.Windows.Forms.ComboBox StatusCB;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.Button createbutton;
         private System.Windows.Forms.TextBox SGTB;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox GCombo;
     }
 }
