@@ -184,12 +184,13 @@ namespace ProjectA
         {
 
             Id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-            FNTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            LNTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            ContactNoTB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            EmailTB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            DTTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            gendercombo.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            RegnoTB.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            FNTB.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            LNTB.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            ContactNoTB.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            EmailTB.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+            DTTB.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+            gendercombo.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
         }
 
         private void deletebutton_Click(object sender, EventArgs e)

@@ -37,9 +37,9 @@
             this.deletebutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.createbutton = new System.Windows.Forms.Button();
-            this.SGTB = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.GCombo = new System.Windows.Forms.ComboBox();
+            this.SGTB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -146,15 +146,6 @@
             this.createbutton.UseVisualStyleBackColor = false;
             this.createbutton.Click += new System.EventHandler(this.createbutton_Click);
             // 
-            // SGTB
-            // 
-            this.SGTB.Location = new System.Drawing.Point(160, 178);
-            this.SGTB.Name = "SGTB";
-            this.SGTB.Size = new System.Drawing.Size(150, 20);
-            this.SGTB.TabIndex = 45;
-            this.SGTB.TextChanged += new System.EventHandler(this.SGTB_TextChanged_1);
-            this.SGTB.Validating += new System.ComponentModel.CancelEventHandler(this.SGTB_Validating);
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(160, 212);
@@ -170,15 +161,23 @@
             this.GCombo.Size = new System.Drawing.Size(150, 21);
             this.GCombo.TabIndex = 47;
             // 
+            // SGTB
+            // 
+            this.SGTB.FormattingEnabled = true;
+            this.SGTB.Location = new System.Drawing.Point(160, 177);
+            this.SGTB.Name = "SGTB";
+            this.SGTB.Size = new System.Drawing.Size(150, 21);
+            this.SGTB.TabIndex = 48;
+            // 
             // StudentGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
             this.ClientSize = new System.Drawing.Size(927, 450);
+            this.Controls.Add(this.SGTB);
             this.Controls.Add(this.GCombo);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.SGTB);
             this.Controls.Add(this.deletebutton);
             this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.createbutton);
@@ -209,8 +208,8 @@
         private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.Button createbutton;
-        private System.Windows.Forms.TextBox SGTB;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox GCombo;
+        private System.Windows.Forms.ComboBox SGTB;
     }
 }

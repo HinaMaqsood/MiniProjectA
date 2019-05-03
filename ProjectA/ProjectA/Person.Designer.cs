@@ -264,7 +264,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(612, 235);
+            this.dataGridView1.Size = new System.Drawing.Size(576, 235);
             this.dataGridView1.TabIndex = 20;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick_1);
             // 
@@ -301,7 +301,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 100);
+            this.panel1.Size = new System.Drawing.Size(896, 100);
             this.panel1.TabIndex = 23;
             // 
             // DTTB
@@ -319,7 +319,7 @@
             this.panel2.Controls.Add(this.deletebutton);
             this.panel2.Controls.Add(this.updatebutton);
             this.panel2.Controls.Add(this.createbutton);
-            this.panel2.Location = new System.Drawing.Point(642, 388);
+            this.panel2.Location = new System.Drawing.Point(606, 388);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(278, 100);
             this.panel2.TabIndex = 24;
@@ -371,7 +371,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(618, 241);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(582, 241);
             this.tableLayoutPanel2.TabIndex = 26;
             // 
             // Person
@@ -379,7 +379,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(932, 500);
+            this.ClientSize = new System.Drawing.Size(896, 500);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);

@@ -55,7 +55,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 100);
+            this.panel1.Size = new System.Drawing.Size(853, 100);
             this.panel1.TabIndex = 24;
             // 
             // label1
@@ -91,7 +91,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(422, 0);
+            this.label2.Location = new System.Drawing.Point(400, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 67);
             this.label2.TabIndex = 26;
@@ -110,7 +110,7 @@
             // 
             // descTB
             // 
-            this.descTB.Location = new System.Drawing.Point(422, 70);
+            this.descTB.Location = new System.Drawing.Point(400, 70);
             this.descTB.Multiline = true;
             this.descTB.Name = "descTB";
             this.descTB.Size = new System.Drawing.Size(369, 62);
@@ -125,7 +125,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(827, 227);
+            this.dataGridView1.Size = new System.Drawing.Size(784, 227);
             this.dataGridView1.TabIndex = 29;
             // 
             // deletebutton
@@ -177,7 +177,7 @@
             this.panel2.Controls.Add(this.createbutton);
             this.panel2.Controls.Add(this.deletebutton);
             this.panel2.Controls.Add(this.updatebutton);
-            this.panel2.Location = new System.Drawing.Point(453, 496);
+            this.panel2.Location = new System.Drawing.Point(410, 496);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 100);
             this.panel2.TabIndex = 40;
@@ -196,7 +196,7 @@
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(833, 233);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(790, 233);
             this.tableLayoutPanel1.TabIndex = 41;
             // 
             // tableLayoutPanel2
@@ -215,7 +215,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(838, 135);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(795, 135);
             this.tableLayoutPanel2.TabIndex = 42;
             // 
             // Project
@@ -223,7 +223,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(896, 608);
+            this.ClientSize = new System.Drawing.Size(853, 608);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);

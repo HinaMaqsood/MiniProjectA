@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
@@ -28,16 +29,21 @@ namespace ProjectA
 
         private void StudentGroup_Load(object sender, EventArgs e)
         {
-            SqlDataAdapter ui = new SqlDataAdapter("Select Title FROM Project", conn);
-            DataTable load = new DataTable();
-            ui.Fill(load);
-            for (int i = 0; i < load.Rows.Count; i++)
+            SqlDataAdapter s = new SqlDataAdapter("Select Id FROM [Group]", conn);
+            DataTable dt = new DataTable();
+            s.Fill(dt);
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
 
-                GCombo.Items.Add(load.Rows[i]["Title"]);
+                GCombo.Items.Add(dt.Rows[i]["Id"]);
             }
-
-
+            SqlDataAdapter sd = new SqlDataAdapter("Select RegistrationNo FROM Student", conn);
+            DataTable d = new DataTable();
+            sd.Fill(d);
+            for (int i = 0; i < d.Rows.Count; i++)
+            {
+                SGTB.Items.Add(d.Rows[i]["RegistrationNo"]);
+            }
         }
 
         private void createbutton_Click(object sender, EventArgs e)

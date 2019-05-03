@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(872, 100);
+            this.panel1.Size = new System.Drawing.Size(862, 100);
             this.panel1.TabIndex = 33;
             // 
             // label4
@@ -75,7 +75,7 @@
             this.FN.ForeColor = System.Drawing.Color.Maroon;
             this.FN.Location = new System.Drawing.Point(3, 0);
             this.FN.Name = "FN";
-            this.FN.Size = new System.Drawing.Size(227, 50);
+            this.FN.Size = new System.Drawing.Size(222, 50);
             this.FN.TabIndex = 34;
             this.FN.Text = "Created On";
             this.FN.Click += new System.EventHandler(this.FN_Click);
@@ -85,9 +85,9 @@
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(236, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(231, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(222, 20);
             this.dateTimePicker1.TabIndex = 35;
             // 
             // CBN
@@ -110,7 +110,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.CBN);
-            this.panel2.Location = new System.Drawing.Point(583, 151);
+            this.panel2.Location = new System.Drawing.Point(573, 151);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(205, 100);
             this.panel2.TabIndex = 42;
@@ -129,7 +129,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(466, 100);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(456, 100);
             this.tableLayoutPanel1.TabIndex = 43;
             // 
             // dataGridView1
@@ -139,7 +139,7 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(612, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(602, 182);
             this.dataGridView1.TabIndex = 20;
             // 
             // tableLayoutPanel2
@@ -155,7 +155,7 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(618, 198);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(608, 198);
             this.tableLayoutPanel2.TabIndex = 44;
             // 
             // Group
@@ -163,7 +163,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(872, 503);
+            this.ClientSize = new System.Drawing.Size(862, 503);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);

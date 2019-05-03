@@ -31,7 +31,6 @@ C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\Proj
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.ProjectAdvisor.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.GroupEvaluation.resources
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.GroupProject.resources
-C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\bin\Debug\itextsharp.dll
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\bin\Debug\itextsharp.xml
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.csproj.CopyComplete
 C:\Users\it world\Documents\GitHub\MiniProjectA\ProjectA\ProjectA\obj\Debug\ProjectA.Report.resources

@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(913, 100);
+            this.panel1.Size = new System.Drawing.Size(867, 100);
             this.panel1.TabIndex = 36;
             // 
             // label4
@@ -109,7 +109,7 @@
             this.panel2.Controls.Add(this.createbutton);
             this.panel2.Controls.Add(this.deletebutton);
             this.panel2.Controls.Add(this.updatebutton);
-            this.panel2.Location = new System.Drawing.Point(531, 357);
+            this.panel2.Location = new System.Drawing.Point(485, 357);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(370, 100);
             this.panel2.TabIndex = 49;
@@ -160,7 +160,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.Location = new System.Drawing.Point(414, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(368, 106);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(496, 235);
             this.dataGridView1.TabIndex = 50;
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightCyan;
-            this.ClientSize = new System.Drawing.Size(913, 469);
+            this.ClientSize = new System.Drawing.Size(867, 469);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.GCB);
